@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+        <button>TESTE</button>
+    <div id="gridjs"></div>
+
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <script>
+        // Set the grid
+const mygrid = new gridjs.Grid({
+    columns: ["Name", "Email", "Phone Number"],      
+    data: [
+        ["Mark", "mark@gmail.com", "(01) 22 888 4444"],
+        ["Eoin", "eoin@gmail.com", "0097 22 654 00033"],
+        ["Sarah", "sarahcdd@gmail.com", "+322 876 1233"],
+        ["Afshin", "afshin@mail.com", "(353) 22 87 8356"]
+    ]
+}).render(document.getElementById("gridjs"));
+
+    document.querySelector("button").addEventListener("click", () => {
+        mygrid.updateConfig({
+    data: [
+        ["test", "test@example.com", "(353) 01 222 3333"],
+        ["Mark", "mark@gmail.com", "(01) 22 888 4444"],
+        ["Eoin", "eoin@gmail.com", "0097 22 654 00033"],
+        ["Sarah", "sarahcdd@gmail.com", "+322 876 1233"],
+        ["Afshin", "afshin@mail.com", "(353) 22 87 8356"]
+    ]
+}).forceRender();
+    })
+
+
+    </script>
+</body>
+</html>
